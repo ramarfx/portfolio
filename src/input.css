@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    overflow-x: hidden;
+
+.skill {
+    writing-mode: sideways-lr;
 }
-    .skill {
-      writing-mode: sideways-lr;
-    }
+
 @screen lg {
     .skill {
         writing-mode: vertical-rl;
@@ -15,9 +14,8 @@ body{
 }
 
 .navbar-fixed{
-    @apply fixed z-[9999] bg-dark bg-opacity-50;
-    backdrop-filter: blur(5px);
-    box-shadow : inset -1px 0 0 rgba(0,0,0,0.1);
+    @apply fixed z-[9999] bg-dark bg-opacity-50 backdrop-blur;
+    box-shadow : inset -1px 0 0 rgba(255, 255, 255, 0.003);
 }
 
 .hamburger-line{
@@ -45,14 +43,42 @@ body{
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     mask-size: cover;
-    @apply bg-primary max-w-[400px] lg:scale-125
+    @apply bg-primary max-w-[400px] lg:scale-125;
 }
 
 .card{
-    @apply flex flex-col justify-center items-center px-10 py-5 bg-lightDark-100 rounded-2xl bg-opacity-25 hover:bg-lightDark-200;
-    backdrop-filter: blur(5px); 
+    @apply flex flex-col justify-center items-center px-5 py-5 bg-lightDark-100 rounded-xl bg-opacity-25 hover:bg-lightDark-200 transition ease-in-out backdrop-blur; 
+}
+
+.card p{
+    @apply text-slate-200 text-base mt-3 lg:text-lg
 }
 
 .card-img{
-    @apply w-20 h-auto;
+    @apply w-full h-auto;
+}
+
+  .hover-underline-animation{
+    @apply inline-block relative text-primary;
+  }
+
+  .hover-underline-animation::after{
+    @apply content-[''] absolute w-full scale-x-0 h-1 bottom-1 left-0 bg-primary origin-bottom-right transition-transform duration-200 ease-out hover:scale-100 hover:origin-bottom-left;
+  }
+
+
+  .project-card{
+    @apply flex flex-col my-4;
+  }
+
+.project-card-description{
+    @apply py-3 px-5 bg-lightDark-100  bg-opacity-25  transition ease-in-out backdrop-blur;
+}
+
+.project-card-description h2{
+    @apply text-slate-200 text-2xl font-poppins font-medium;
+}
+
+.btn{
+    @apply bg-lightDark-200 text-primary font-medium text-center py-2 hover:bg-lightDark-300;
 }
