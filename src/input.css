@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    /* @apply font-poppins; */
-} 
+body{
+    overflow-x: hidden;
+}
     .skill {
       writing-mode: sideways-lr;
     }
