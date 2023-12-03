@@ -718,6 +718,10 @@ video {
   height: auto;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .w-\[350px\] {
   width: 350px;
 }
@@ -809,8 +813,16 @@ video {
   flex-direction: column;
 }
 
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -825,6 +837,10 @@ video {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .gap-1 {
   gap: 0.25rem;
 }
@@ -835,6 +851,10 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .self-end {
@@ -869,6 +889,10 @@ video {
 
 .bg-transparent {
   background-color: transparent;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-4 {
@@ -906,6 +930,11 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .pb-32 {
   padding-bottom: 8rem;
 }
@@ -940,6 +969,11 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -986,10 +1020,15 @@ video {
   opacity: 0.7;
 }
 
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-lightDark-100 {
+  --tw-shadow-color: #283e71;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .blur-3xl {
@@ -1028,10 +1067,15 @@ video {
   z-index: 9999;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
   --tw-bg-opacity: 0.5;
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-color: #1c2c50;
+  --tw-shadow: var(--tw-shadow-colored);
   --tw-backdrop-blur: blur(8px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  box-shadow : inset -1px 0 0 rgba(255, 255, 255, 0.003);
+  /* box-shadow : inset -1px 0 0 rgba(255, 255, 255, 0.003); */
 }
 
 .hamburger-line {
@@ -1213,6 +1257,8 @@ video {
   background-color: rgb(28 44 80 / var(--tw-bg-opacity));
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   text-align: center;
   font-weight: 500;
   --tw-text-opacity: 1;
@@ -1222,6 +1268,121 @@ video {
 .btn:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(40 62 113 / var(--tw-bg-opacity));
+}
+
+.sosmed a {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* The actual timeline (the vertical ruler) */
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+}
+
+/* The actual timeline (the vertical ruler) */
+
+.timeline::after {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  margin-left: -0.25rem;
+  width: 0.25rem;
+  background-color: rgb(40 62 113 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.25;
+  content: ' ';
+}
+
+/* Container around content */
+
+.wrap {
+  position: relative;
+  background-color: inherit;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* The circles on the timeline */
+
+.wrap::after {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 15px;
+  z-index: 10;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
+}
+
+/* Add arrows to the right wrap (pointing left) */
+
+.wrap::before {
+  content: " ";
+  position: absolute;
+  left: 31px;
+  top: 22px;
+  z-index: 10;
+  height: 0px;
+  width: 0px;
+  border-width: 8px;
+  border-top-color: transparent;
+  border-right-color: rgb(40 62 113 / var(--tw-border-opacity));
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  --tw-border-opacity: 0.25;
+  border-width: 10px 10px 10px 0;
+}
+
+/* The actual content */
+
+.content {
+  position: relative;
+  border-radius: 0.375rem;
+  background-color: rgb(40 62 113 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.25;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width wraps */
+
+  .wrap {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+
+  .wrap::before {
+    left: 61px;
+  }
+
+  /* Make sure all circles are at the same spot */
+
+  .right::after {
+    left: 2px;
+  }
 }
 
 .group:hover .group-hover\:text-primary {
@@ -1240,6 +1401,10 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .md\:justify-normal {
+    justify-content: normal;
+  }
+
   .md\:gap-10 {
     gap: 2.5rem;
   }
@@ -1256,6 +1421,11 @@ video {
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .md\:text-lg {
