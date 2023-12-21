@@ -26,7 +26,7 @@ module.exports = {
       }
     },
     fontFamily:{
-      poppins: ['poppins', ...defaultTheme.fontFamily.sans]
+      poppins: ['poppins']
     },
   },
   plugins: [
